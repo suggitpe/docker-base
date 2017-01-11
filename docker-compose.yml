@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    centos:
+        build:
+            context: .
+            dockerfile: ./DF-centos7-oraclejava8
+    ubuntu:
+        build:
+            context: .
+            dockerfile: ./DF-16.04-oraclejava8
