@@ -1,0 +1,6 @@
+FROM centos:8
+
+# - install java8 jdk
+RUN yum -y update && \
+    yum install -y wget && \
+    yum install -y java-11-openjdk
