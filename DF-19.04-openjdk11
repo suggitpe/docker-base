@@ -2,7 +2,7 @@ FROM ubuntu:19.04
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-	apt-get install -y openjdk-8-jdk ca-certificates-java && \
+	apt-get install -y openjdk-10-jdk ca-certificates-java && \
 	update-ca-certificates -f && \
 	apt-get clean
 

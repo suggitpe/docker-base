@@ -1,0 +1,10 @@
+FROM ubuntu:19.04
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y openjdk-11-jdk ca-certificates-java && \
+	update-ca-certificates -f && \
+	apt-get clean
+
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
+RUN export JAVA_HOME
