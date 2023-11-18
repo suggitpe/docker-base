@@ -1,0 +1,10 @@
+FROM ubuntu:23.10
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y openjdk-19-jdk ca-certificates-java && \
+	update-ca-certificates -f && \
+	apt-get clean
+
+RUN echo "export JAVA_HOME=\$(readlink -f /usr/bin/javac | sed \"s:/bin/javac::\")" >> /root/.bashrc
+RUN bash -c 'touch $JAVA_HOME/bin/javac'

@@ -1,0 +1,9 @@
+FROM fedora:39
+
+# - install java8 jdk
+RUN dnf -y update && \
+    dnf install -y wget curl which java-latest-openjdk-devel && \
+    dnf clean all
+
+RUN echo "export JAVA_HOME=\$(readlink -f /usr/bin/javac | sed \"s:/bin/javac::\")" >> /root/.bashrc
+RUN bash -c 'touch $JAVA_HOME/bin/javac'
